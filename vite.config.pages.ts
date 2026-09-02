@@ -8,7 +8,8 @@ const base = process.env["BASE_PATH"] ?? "/";
 
 export default defineConfig({
   vite: { base },
-  nitro: { preset: "static" },
+  // Sem nitro: o GitHub Pages só serve arquivos estáticos.
+  nitro: false,
   tanstackStart: {
     server: { entry: "server" },
     prerender: { enabled: true, crawlLinks: true },
